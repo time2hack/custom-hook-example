@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import KEY from './KeyContext';
 import DataTable1 from './DataTable.1'
 
-const url = 'http://www.omdbapi.com/?s='
+const url = '//www.omdbapi.com/?s='
 
 const DataTable = ({ query = 'Harry Potter' }) => {
   const key = useContext(KEY);

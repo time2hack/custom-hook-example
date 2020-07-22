@@ -3,7 +3,7 @@ import KeyContext from './KeyContext';
 import request from './request';
 import queryString from 'query-string';
 
-const url = 'http://www.omdbapi.com/'
+const url = '//www.omdbapi.com/'
 
 const sortMovies = (movies = []) => movies.sort((a, b) => (a.Year - b.Year))
 

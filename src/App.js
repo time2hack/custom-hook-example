@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Data3 from './components/DataTable.3'
+import KEY from './KeyContext'
 
 function App() {
+  const [q, setQ] = useState('Harry Potter')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <KEY.Provider value={process.env.REACT_APP_OMDB_API_KEY}>
+      <div>
+        <input
+          type="search"
+          name="q"
+          defaultValue={q}
+          onBlur={e => { setQ(e.target.value) }}
+        />
+      </div>
+      <Data3 query={q} />
+    </KEY.Provider>
   );
 }
 

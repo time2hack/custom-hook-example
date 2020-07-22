@@ -7,7 +7,7 @@ const DataTable = ({ query }) => {
   useEffect(() => { loadMovies(query) }, [loadMovies, query])
 
   return (
-    <div>
+    <>
       {movies.map(({Poster, Title, imdbID, Year}) => (
         <div className="movie" key={imdbID}>
           <img className="movie-poster" src={Poster} height="100" alt={Title} />
@@ -17,7 +17,7 @@ const DataTable = ({ query }) => {
           </p>
         </div>
       ))}
-    </div>
+    </>
   )
 }
 
